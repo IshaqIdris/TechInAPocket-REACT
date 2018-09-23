@@ -67,7 +67,9 @@ export class HomeScreen extends React.Component {
               flex: 1, blurRadius:50}}
               source={{ uri: item.img }}
               >
-              <Text >{item.title}</Text>
+              <View style={{flex:1, backgroundColor:'rgba(125, 26, 255, 0.22)'}}>
+                <Text style={{color:'white', fontWeight: 'bold', textAlign:'center', fontSize:30, marginTop:20}}>{item.title}</Text>
+              </View>
             </ImageBackground>
           </View>
         </TouchableHighlight>
