@@ -14,7 +14,6 @@ export class CategoriesScreen extends React.Component {
       }
 
       this.itemsRef = this.getRef().child('Categories');
-
       this.renderRow = this.renderRow.bind(this);
       this.pressRow = this.pressRow.bind(this);
     }
@@ -38,6 +37,7 @@ export class CategoriesScreen extends React.Component {
           items.push({
             title: child.val().name,
             _key: child.key,
+          
           })
         });
         this.setState({
@@ -50,8 +50,8 @@ export class CategoriesScreen extends React.Component {
 
     pressRow(item){
       // this.itemsRef = this.getRef().child('Tutorials/'+ itme);
-      console.log(JSON.parse(item.title));
-      this.props.navigation.navigate('Category', item);
+      // console.log(JSON.parse(item.title));
+      this.props.navigation.navigate('Category', item.title);
 
     }
 
@@ -62,7 +62,7 @@ export class CategoriesScreen extends React.Component {
         }}>
           <View style={styles.box}>
               <View style={{flex:1, backgroundColor:'rgba(123, 0, 224, 1)'}}>
-                <Text style={{color:'white', fontWeight: 'bold', textAlign:'center', fontSize:20, marginTop:10}}>{item.title}</Text>
+                <Text style={{color:'white', fontWeight: 'bold', textAlign:'center', fontSize:20, marginTop:10}}>{item._key}</Text>
               </View>
           </View>
         </TouchableHighlight>
