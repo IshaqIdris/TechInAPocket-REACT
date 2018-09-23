@@ -3,12 +3,9 @@ import { Text, View, ListView, TouchableHighlight, ImageBackground, StyleSheet }
 import {SearchBar} from 'react-native-elements';
 import {fdb} from './firebaseConfig';
 
-let data = {};
-let key = "";
-
 
 export class HomeScreen extends React.Component {
-
+    
     constructor(){
       super();
       let ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 !== r2});
@@ -41,7 +38,8 @@ export class HomeScreen extends React.Component {
           items.push({
             title: child.val().name,
             img: child.val().img,
-            _key: child.key
+            _key: child.key,
+            steps:JSON.stringify(child.val().steps),
           })
         });
         this.setState({
@@ -53,7 +51,10 @@ export class HomeScreen extends React.Component {
     }
 
     pressRow(item){
-      console.log(item);
+      // this.itemsRef = this.getRef().child('Tutorials/'+ itme);
+      console.log(JSON.parse(item.steps));
+      this.props.navigation.navigate('Tutorial', item);
+
     }
 
     renderRow(item){
@@ -63,10 +64,10 @@ export class HomeScreen extends React.Component {
         }}>
           <View style={styles.box}>
             <ImageBackground style={{
-              flex: 1}}
+              flex: 1, blurRadius:50}}
               source={{ uri: item.img }}
               >
-              <Text>{item.title}</Text>
+              <Text >{item.title}</Text>
             </ImageBackground>
           </View>
         </TouchableHighlight>
@@ -77,7 +78,7 @@ export class HomeScreen extends React.Component {
       return (
         <View style={{ flex: 1}}>
           <View >
-              <SearchBar lightTheme containerStyle={{marginTop:20}} placeholder='Type Here...' />
+              <SearchBar lightTheme  placeholder='Search Tutorials' />
           </View>
           <View style={styles.row}>
             <ListView
@@ -101,7 +102,7 @@ export class HomeScreen extends React.Component {
     box: {
       flex: 1,
       height: 100,
-      borderWidth: 1,
-      borderColor: '#7CFC00'
+      borderWidth: 3,
+      borderColor: '#FFFFFF'
     }
   });
