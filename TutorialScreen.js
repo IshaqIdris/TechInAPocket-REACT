@@ -5,6 +5,13 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export class TutorialScreen extends React.Component {
 
+    static navigationOptions = {
+      title: 'Tutorial',
+      headerStyle: {
+        backgroundColor: 'rgba(0, 255, 230, 1)',
+      },
+    };
+
     render() {
       return (
         <View style={{ flex: 1, }}>

@@ -2,9 +2,17 @@ import React from 'react';
 import { Text, View, ListView, TouchableHighlight, ImageBackground, StyleSheet } from 'react-native';
 import {SearchBar} from 'react-native-elements';
 import {fdb} from './firebaseConfig';
+import {Search} from './Search';
 
 
 export class HomeScreen extends React.Component {
+
+  static navigationOptions = {
+    headerTitle: <Search />,
+    headerStyle: {
+      backgroundColor: 'rgba(21, 255, 0, 1)',
+    },
+  };
     
     constructor(){
       super();
@@ -79,9 +87,6 @@ export class HomeScreen extends React.Component {
     render() {
       return (
         <View style={{ flex: 1}}>
-          <View >
-              <SearchBar lightTheme  placeholder='Search Tutorials' />
-          </View>
           <View style={styles.row}>
             <ListView
               dataSource={this.state.itemDataSource}

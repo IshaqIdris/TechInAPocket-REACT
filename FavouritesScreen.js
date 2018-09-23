@@ -6,9 +6,6 @@ export class FavouritesScreen extends React.Component {
     render() {
       return (
         <View style={{ flex: 1}}>
-          <View >
-              <SearchBar lightTheme containerStyle={{marginTop:20}} placeholder='Type Here...' />
-          </View>
           <Text>Favourites!</Text>
         </View>
       );

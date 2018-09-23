@@ -72,9 +72,6 @@ export class CategoriesScreen extends React.Component {
     render() {
       return (
         <View style={{ flex: 1}}>
-          <View >
-              <SearchBar lightTheme  placeholder='Search Tutorials' />
-          </View>
           <View style={styles.row}>
             <ListView
               dataSource={this.state.itemDataSource}
