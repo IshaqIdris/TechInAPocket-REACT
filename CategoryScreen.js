@@ -5,6 +5,13 @@ import {fdb} from './firebaseConfig';
 
 export class CategoryScreen extends React.Component {
 
+  static navigationOptions = {
+    headerTitle: 'Tutorials',
+    headerStyle: {
+      backgroundColor: 'rgba(166, 102, 255, 1)',
+    },
+  };
+
   constructor(){
     super();
     let ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 !== r2});

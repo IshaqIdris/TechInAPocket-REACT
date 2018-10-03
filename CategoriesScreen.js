@@ -5,6 +5,13 @@ import {fdb} from './firebaseConfig';
 
 
 export class CategoriesScreen extends React.Component {
+
+  static navigationOptions = {
+    headerTitle: 'Categories',
+    headerStyle: {
+      backgroundColor: 'rgba(166, 102, 255, 1)',
+    },
+  };
     
     constructor(){
       super();

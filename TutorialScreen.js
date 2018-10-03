@@ -17,7 +17,7 @@ export class TutorialScreen extends React.Component {
         <View style={{ flex: 1, }}>
           <Swiper showsButtons={true}>
           <View >
-            <Text >{this.props.navigation.state.params.title}</Text>
+            <Text style={{textAlign:"center", paddingTop:40, fontWeight:"bold", fontSize:30}} >{this.props.navigation.state.params.title}</Text>
           </View>
           <View style={{justifyContent: 'center', alignItems: 'center' }}>
             <View style={{paddingTop:10}}>

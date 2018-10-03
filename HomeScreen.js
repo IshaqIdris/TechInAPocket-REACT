@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, ListView, TouchableHighlight, ImageBackground, StyleSheet } from 'react-native';
-import {SearchBar} from 'react-native-elements';
 import {fdb} from './firebaseConfig';
 import {Search} from './Search';
 
