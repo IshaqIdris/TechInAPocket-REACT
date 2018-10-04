@@ -53,7 +53,7 @@ export default createBottomTabNavigator({
   Login: {
     screen:LoginStack,
     navigationOptions: {
-      tabBarLabel:"Categories",
+      tabBarLabel:"Register",
       tabBarIcon: ({ tintColor }) => (
         <Icon name="clipboard" size={30} color="#640cf2" />
       )
